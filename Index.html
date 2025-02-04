@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New tab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url(./Image.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .search-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .search-box {
+            width: 500px;
+            padding: 15px;
+            border: none;
+            border-radius: 2px;
+            font-size: 16px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            outline: none;
+            transition: box-shadow 0.3s ease;
+            padding-left: 40px;
+            text-indent: 10px;
+            padding-inline-start: 50px;
+        }
+
+        .search-box:focus {
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+            background: hsl(200, 100%, 96%);
+        }
+
+
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            height: 24px;
+            pointer-events: none;
+            fill: #3f4145;
+        }
+
+        .search-logo {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 24px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 120px;
+            margin-left: 20px;
+            padding: 14px;
+            border: none;
+            border-radius: 2px;
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            color: #3f4145;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .search-button:hover {
+            background: hsl(200, 100%, 96%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #0091ff;
+        }
+        .search-button:active {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-icon {
+            margin-left: 8px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .top-left-button {
+            position: absolute;
+            top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #ffffff00;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            color: #ffffff;
+            text-decoration: underline;
+            text-underline-offset: 15px;
+            margin-right: 500px;
+        }
+
+        .top-left-button:hover {
+            background: #f0f0f000;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+        }
+       
+        .top-left-button-alt {
+            position: absolute;
+            top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #ffffff00;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            color: #ffffff;
+            margin-right: 350px;
+        }
+
+        .top-left-button-alt:hover {
+            background: #f0f0f000;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            text-decoration: underline;
+            text-underline-offset: 15px;
+        }
+
+        .top-mid-button {
+            position: absolute;
+            top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #ffffff00;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            color: #ffffff;
+            margin-right: 200px;
+        }
+
+        .top-mid-button:hover {
+            background: #f0f0f000;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            text-decoration: underline;
+            text-underline-offset: 15px;
+        }
+
+        .top-right-button-alt {
+            position: absolute;
+            top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #ffffff00;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            color: #ffffff;
+            margin-right: 50px;
+        }
+
+        .top-right-button-alt:hover {
+            background: #f0f0f000;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            text-decoration: underline;
+            text-underline-offset: 15px;
+        }
+        
+        .top-right-button {
+            position: absolute;
+            top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #ffffff00;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            color: #ffffff;
+            margin-right: -100px;
+        }
+
+        .top-right-button:hover {
+            background: #f0f0f000;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            text-decoration: underline;
+            text-underline-offset: 15px;
+        }
+
+        .top-right-altPr-button {
+            position: absolute;
+            top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #ffffff00;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            color: #ffffff;
+            margin-right: -250px;
+        }
+
+        .top-right-altPr-button:hover {
+            background: #f0f0f000;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            text-decoration: underline;
+            text-underline-offset: 15px;
+        }
+
+        .top-right-altPre-button {
+            position: absolute;
+            top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #ffffff00;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            color: #ffffff;
+            margin-right: -450px;
+            text-underline-offset: 15px;
+        }
+
+        .top-right-altPre-button:hover {
+            background: #f0f0f000;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            text-decoration: underline;
+            text-underline-offset: 15px;
+
+        }
+
+        .bing-title {
+            position: absolute;
+            top: 15%;
+            font-size: 75px;
+            color: white;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            z-index: 1;
+       }
+
+    </style>
+</head>
+<body>
+    <button class="top-left-button">
+        Web
+    </button>
+    <button class="top-left-button-alt" onclick="window.location.href='https://www.bing.com/images'">
+        Images
+    </button>
+    <button class="top-mid-button" onclick="window.location.href='https://outlook.live.com/mail'">
+        Mail
+    </button>
+    <button class="top-right-button-alt" onclick="window.location.href='https://onedrive.live.com/?id=root&cid=3466A97F02B93C13&qt=mru'">
+        Drive
+    </button>
+    <button class="top-right-button" onclick="window.location.href='https://www.bing.com/maps'">
+        Maps
+    </button>
+    <button class="top-right-altPr-button" onclick="window.location.href='https://m365.cloud.microsoft/?auth=1'">
+        Office
+    </button>
+    <button class="top-right-altPre-button" onclick="window.location.href='https://account.microsoft.com/?refd=rewards.bing.com&client_flight=cmmenbvo5zj&status=cancelled&res=acw_landing_page_cancelled'">
+        Account
+    </button>
+    <h1 class="bing-title">Bing</h1>
+    <div class="search-container">
+        <form id="search-form" action="https://www.bing.com/search" method="get" class="search-form core">
+            <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#888" d="M10 2.75a7.25 7.25 0 015.63 11.82l4.9 4.9a.75.75 0 01-.98 1.13l-.08-.07-4.9-4.9A7.25 7.25 0 1110 2.75zm0 1.5a5.75 5.75 0 100 11.5 5.75 5.75 0 000-11.5z"></path>
+            </svg>
+            <input type="text" id="search-box" name="q" class="search-box" placeholder="Search the web">
+            <a href="https://www.bing.com/hp?mkt=fr-FR">
+                <img src="https://assets.msn.com/staticsb/statics//latest/icons/BingLogo.svg" alt="Bing Logo" class="search-logo">
+            </a>
+        </form>
+        <button class="search-button" onclick="window.location.href='https://edgeservices.bing.com/edgesvc/chat?udsframed=1&form=SHORUN&clientscopes=chat,noheader,udsedgeshop,channelstable,ntpquery,devtoolsapi,udsinwin11,udsdlpconsent,udsmrefresh,cspgrd,&shellsig=75a5ef171171a78a0599470e19cd73486fce3215&setlang=1&udsps=0&udspp=0Origin'">
+            Bing AI <img src="./Bing_Chat.png" alt="Icon" class="button-icon">
+        </button>
+    </div>
+    <script>
+        document.getElementById("search-box").addEventListener("keypress", function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById("search-form").submit();
+            }
+        });
+    </script>
+</body>
+</html>
